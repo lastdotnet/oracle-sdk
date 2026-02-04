@@ -109,6 +109,15 @@ export type RateProviderOracle = {
   rateProvider: Address;
 };
 
+export type VedaAccountantOracle = {
+  address: Address;
+  chainId: number;
+  name: 'VedaAccountantOracle';
+  base: Address;
+  quote: Address;
+  accountant: Address;
+};
+
 export type PendleOracle = {
   address: Address;
   chainId: number;
@@ -170,6 +179,7 @@ export type Adapter =
   | CrossAdapter
   | FixedRateOracle
   | RateProviderOracle
+  | VedaAccountantOracle
   | PendleOracle
   | PendleUniversalOracle
   | SwaapSafeguardOracle
