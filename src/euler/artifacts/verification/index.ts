@@ -13,6 +13,7 @@ import PythOracle from './PythOracle';
 import RateProviderOracle from './RateProviderOracle';
 import RedstoneCoreOracle from './RedstoneCoreOracle';
 import UniswapV3Oracle from './UniswapV3Oracle';
+import VedaAccountantOracle from './VedaAccountantOracle';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const verificationArtifacts: Record<string, any> = {
@@ -31,4 +32,5 @@ export const verificationArtifacts: Record<string, any> = {
   RateProviderOracle,
   RedstoneCoreOracle,
   UniswapV3Oracle,
+  VedaAccountantOracle,
 } as const;

@@ -35,6 +35,7 @@ const abi = parseAbi([
   'function underlying() view returns (address)',
   'function pool() view returns (address)',
   'function priceOracleIndex() view returns (uint256)',
+  'function accountant() view returns (address)',
 ]);
 
 const adapterClassToFunctionNames: Record<string, string[]> = {
@@ -49,6 +50,7 @@ const adapterClassToFunctionNames: Record<string, string[]> = {
   PendleUniversalOracle: ['base', 'quote', 'pendleMarket', 'twapWindow'],
   PythOracle: ['base', 'quote', 'pyth', 'feedId', 'maxStaleness', 'maxConfWidth'],
   RateProviderOracle: ['base', 'quote', 'rateProvider'],
+  VedaAccountantOracle: ['base', 'quote', 'accountant'],
   RedstoneCoreOracle: ['base', 'quote', 'feedId', 'feedDecimals', 'maxStaleness'],
   UniswapV3Oracle: ['tokenA', 'tokenB', 'fee', 'twapWindow', 'pool'],
   CurveEMAOracle: ['base', 'quote', 'pool', 'priceOracleIndex'],
