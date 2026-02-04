@@ -1,78 +1,18 @@
+import { parseAbi } from 'viem';
+
 export default {
-  abi: [
-    {
-      type: 'constructor',
-      inputs: [
-        { name: '_base', type: 'address', internalType: 'address' },
-        { name: '_quote', type: 'address', internalType: 'address' },
-        { name: '_accountant', type: 'address', internalType: 'address' },
-      ],
-      stateMutability: 'nonpayable',
-    },
-    {
-      type: 'function',
-      name: 'accountant',
-      inputs: [],
-      outputs: [{ name: '', type: 'address', internalType: 'address' }],
-      stateMutability: 'view',
-    },
-    {
-      type: 'function',
-      name: 'base',
-      inputs: [],
-      outputs: [{ name: '', type: 'address', internalType: 'address' }],
-      stateMutability: 'view',
-    },
-    {
-      type: 'function',
-      name: 'getQuote',
-      inputs: [
-        { name: 'inAmount', type: 'uint256', internalType: 'uint256' },
-        { name: 'base', type: 'address', internalType: 'address' },
-        { name: 'quote', type: 'address', internalType: 'address' },
-      ],
-      outputs: [{ name: '', type: 'uint256', internalType: 'uint256' }],
-      stateMutability: 'view',
-    },
-    {
-      type: 'function',
-      name: 'getQuotes',
-      inputs: [
-        { name: 'inAmount', type: 'uint256', internalType: 'uint256' },
-        { name: 'base', type: 'address', internalType: 'address' },
-        { name: 'quote', type: 'address', internalType: 'address' },
-      ],
-      outputs: [
-        { name: '', type: 'uint256', internalType: 'uint256' },
-        { name: '', type: 'uint256', internalType: 'uint256' },
-      ],
-      stateMutability: 'view',
-    },
-    {
-      type: 'function',
-      name: 'name',
-      inputs: [],
-      outputs: [{ name: '', type: 'string', internalType: 'string' }],
-      stateMutability: 'view',
-    },
-    {
-      type: 'function',
-      name: 'quote',
-      inputs: [],
-      outputs: [{ name: '', type: 'address', internalType: 'address' }],
-      stateMutability: 'view',
-    },
-    { type: 'error', name: 'PriceOracle_InvalidAnswer', inputs: [] },
-    {
-      type: 'error',
-      name: 'PriceOracle_NotSupported',
-      inputs: [
-        { name: 'base', type: 'address', internalType: 'address' },
-        { name: 'quote', type: 'address', internalType: 'address' },
-      ],
-    },
-    { type: 'error', name: 'PriceOracle_Overflow', inputs: [] },
-  ],
+  abi: parseAbi([
+    'constructor(address _base, address _quote, address _accountant)',
+    'function accountant() view returns (address)',
+    'function base() view returns (address)',
+    'function getQuote(uint256 inAmount, address base, address quote) view returns (uint256)',
+    'function getQuotes(uint256 inAmount, address base, address quote) view returns (uint256, uint256)',
+    'function name() view returns (string)',
+    'function quote() view returns (address)',
+    'error PriceOracle_InvalidAnswer()',
+    'error PriceOracle_NotSupported(address base, address quote)',
+    'error PriceOracle_Overflow()',
+  ]),
   methodIdentifiers: {
     'accountant()': '4fb3ccc5',
     'base()': '5001f3b5',
