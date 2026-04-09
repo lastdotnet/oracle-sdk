@@ -30,6 +30,16 @@ export type ChronicleOracle = {
   maxStaleness: bigint;
 };
 
+export type StorkChainlinkOracle = {
+  address: Address;
+  chainId: number;
+  name: 'StorkChainlinkOracle';
+  base: Address;
+  quote: Address;
+  feed: Address;
+  maxStaleness: bigint;
+};
+
 export type CurveEMAOracle = {
   address: Address;
   chainId: number;
@@ -171,6 +181,7 @@ export type Adapter =
   | ChainlinkOracle
   | ChainlinkInfrequentOracle
   | ChronicleOracle
+  | StorkChainlinkOracle
   | CurveEMAOracle
   | LidoOracle
   | LidoFundamentalOracle

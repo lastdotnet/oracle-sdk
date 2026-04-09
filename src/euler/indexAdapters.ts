@@ -42,6 +42,7 @@ const adapterClassToFunctionNames: Record<string, string[]> = {
   ChainlinkOracle: ['base', 'quote', 'feed', 'maxStaleness'],
   ChainlinkInfrequentOracle: ['base', 'quote', 'feed', 'maxStaleness'],
   ChronicleOracle: ['base', 'quote', 'feed', 'maxStaleness'],
+  StorkChainlinkOracle: ['base', 'quote', 'feed', 'maxStaleness'],
   FixedRateOracle: ['base', 'quote', 'rate'],
   IdleTranchesOracle: ['tranche', 'underlying'],
   LidoOracle: ['WSTETH', 'STETH'],
