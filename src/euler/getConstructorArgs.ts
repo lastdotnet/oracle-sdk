@@ -10,7 +10,8 @@ export function getConstructorArgs(adapter: Adapter): readonly unknown[] {
   if (
     adapter.name === 'ChainlinkOracle' ||
     adapter.name === 'ChainlinkInfrequentOracle' ||
-    adapter.name === 'ChronicleOracle'
+    adapter.name === 'ChronicleOracle' ||
+    adapter.name === 'StorkChainlinkOracle'
   ) {
     return [adapter.base, adapter.quote, adapter.feed, adapter.maxStaleness];
   }
